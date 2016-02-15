@@ -1,0 +1,16 @@
+<ion-view title="Avulso" hide-back-button="true" enable-menu-with-back-views="true">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <form class="list">
+            <label class="item item-input">
+                <span class="input-label">Nome</span>
+                <input type="text" placeholder="">
+            </label>
+            <div class="spacer" style="width: 283px; height: 12px;"></div>
+            <ion-item class="range range-positive">Nota
+                <input type="range" value="5" min="0" max="10">
+            </ion-item>
+        </form>
+        <div class="spacer" style="width: 283px; height: 16px;"></div>
+        <a ui-sref="menu.listaPresenca"  class="button button-stable button-block ">Salvar</a>
+    </ion-content>
+</ion-view>

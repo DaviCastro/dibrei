@@ -1,0 +1,19 @@
+<ion-view title="Grupo" hide-back-button="true" enable-menu-with-back-views="true">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <form class="list">
+            <label class="item item-input" name="nomeGrupo">
+                <span class="input-label">Nome</span>
+                <input type="text" placeholder="Nome do Grupo">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Descrição</span><textarea placeholder="Descrição do Grupo"> </textarea>
+            </label>
+            <ion-toggle toggle-class="toggle-assertive" ng-checked="true">Ativo</ion-toggle>
+            <button class="button  button-block ">Salvar</button>
+            <a ui-sref="menu.dibreiro" class="button button-stable button-block ">Adicionar Peladeiro</a>
+            <ion-list></ion-list>
+        </form>
+        <button class="button button-stable button-block ">Ver Dibreiros</button>
+        <button class="button button-stable button-block ">Ver Peladas</button>
+    </ion-content>
+</ion-view>
