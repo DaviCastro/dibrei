@@ -1,6 +1,6 @@
 <ion-view title="Lista presenca" hide-back-button="true" enable-menu-with-back-views="false">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <div class="list card">
+        <div class="list card balanced">
             <div class="item item-divider">Confirmados</div>
             <div class="item item-body">
                 <ion-list>
@@ -11,7 +11,7 @@
             </div>
             <div class="item item-divider">Total</div>
         </div>
-        <div class="list card">
+        <div class="list card assertive">
             <div class="item item-divider">Não Confirmados</div>
             <div class="item item-body">
                 <ion-list>
@@ -22,7 +22,16 @@
             </div>
             <div class="item item-divider">Total</div>
         </div>
-        <a ui-sref="menu.avulso" class="button button-stable button-block ">Adicionar avulso</a>
-        <a ui-sref="menu.telaPeladaExecucao" class="button button-stable button-block ">Iniciar Pelada</a>
+        <div class="row">
+         
+                 <a ui-sref="menu.avulso" class="button button-full button-stable button-block ">Adicionar avulso</a>
+         
+            
+                 <a ui-sref="menu.telaPeladaExecucao" class="button button-full button-stable button-block ">Iniciar Pelada</a>
+            
+            
+        </div>
+       
+      
     </ion-content>
 </ion-view>

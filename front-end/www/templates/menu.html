@@ -1,6 +1,6 @@
 <ion-side-menus enable-menu-with-back-views="true">
     <ion-side-menu-content>
-        <ion-nav-bar class="bar-stable">
+        <ion-nav-bar class="bar-balanced">
             <ion-nav-back-button></ion-nav-back-button>
             <ion-nav-buttons side="left">
                 <button class="button button-icon button-clear ion-navicon" menu-toggle=""></button>
@@ -18,6 +18,26 @@
                 <ion-item ui-sref="menu.pelada" menu-close="">Marcar Pelada</ion-item>
                 <ion-item ui-sref="menu.listaGrupo" menu-close="">Grupos</ion-item>
             </ion-list>
+            
+               
+            <ion-list>
+                <ion-item nav-clear menu-close ui-sref="app.activity">
+                    Activity
+                </ion-item>
+                <ion-item nav-clear menu-close ui-sref="app.login">
+                    Login
+                </ion-item>
+                <ion-item nav-clear menu-close >
+                    Profile
+                </ion-item>
+                <ion-item nav-clear menu-close ui-sref="app.friends">
+                    Friends
+                </ion-item>
+                <ion-item nav-clear menu-close ui-sref="app.gallery">
+                    Gallery
+                </ion-item>
+            </ion-list>
+  
         </ion-content>
     </ion-side-menu>
 </ion-side-menus>
