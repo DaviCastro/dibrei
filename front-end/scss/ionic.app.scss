@@ -3,11 +3,12 @@ $light:                           #fff !default;
 $stable:                          #f8f8f8 !default;
 $positive:                        #387ef5 !default;
 $calm:                            #11c1f3 !default;
-$balanced:                        #1565C0 !default;
+$balanced:                        darken(rgb(66, 90, 87),10%) !default;
 $energized:                       #ffc900 !default;
 $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
+
 
 
 
@@ -17,3 +18,22 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+
+.teste{
+    background-color: linear-gradient(120deg, rgb(45, 46, 46), rgb(66, 90, 87), rgb(71, 100, 97));
+}
+
+
+
+.angle-gradient-svg {
+  background: linear-gradient(120deg, rgb(45, 46, 46), rgb(66, 90, 87), rgb(71, 100, 97));
+  width: 80px;
+  height: 80px;
+}
+
+
+.header-balanced:hover{
+       
+            background-color: (pink !important);
+    
+}
