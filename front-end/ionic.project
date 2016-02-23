@@ -1,6 +1,6 @@
 {
   "name": "Dibrei",
-  "app_id": "",
+  "app_id": "6e849655",
   "gulpStartupTasks": [
     "sass",
     "watch"
