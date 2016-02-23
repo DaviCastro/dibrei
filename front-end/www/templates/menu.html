@@ -8,37 +8,42 @@
         </ion-nav-bar>
         <ion-nav-view name="side-menu21"></ion-nav-view>
     </ion-side-menu-content>
-    <ion-side-menu class="angle-gradient-svg" side="left">
-        
-        <ion-header-bar class="side-menu-left bar-menu-avatar" >
-            <span class="avatar" style="background: url('img/avatar.jpg'); background-size: cover;"></span>
-            
-        </ion-header-bar>
-      
-       <ion-content padding="false" class="side-menu-left"  ion-content="">
-            
-            <!--   
-               <div class="row" style="height: 100px">
-                   
-                   <div class="col"> 
-                     <a class="item-avatar" href="#" style="background-position:center;">
-                        <img src="img/avatar.jpg" id="side-menu-img">   
-                     </a>
-                   </div>
-                   
-               </div>
-               
-               <div class="list">
+    <ion-side-menu side="left" class="gradiente">
+        <ion-content padding="false" class="side-menu-left" ion-content="">
+            <ion-list class="listaMenu">
 
-                  <a class="item item-avatar" href="#">
-                    <img src="img/avatar.jpg" id="side-menu-img"> 
-                   
-                  </a>   
-                </div>           
-            -->
+                <a class="item item-avatar item-text-wrap" href="#" style="">
+                    <img class="avatar" src="img/avatar.jpg" id="side-menu-img">
+                    <div class="side-menu-info">
+                        <h2 class="corTexto"><b>Davidson<b></h2>
+                        
+                    </div>
+                </a>
+                <a class="item item-icon-left" href="#">
+                    <i class="icon ion-ios-home-outline"></i> Inicial
+                </a>
+
+                <a class="item item-icon-left " href="#">
+                    <i class="icon ion-ios-football-outline"></i> Pelada
+                    
+                </a>
+
+                <a class="item item-icon-left" href="#">
+                    <i class="icon ion-android-globe"></i> Liga
+                </a>
+
+                <a class="item item-icon-left" href="#">
+                    <i class="icon ion-ios-star-outline"></i> Ranks
+                </a>
+                
+                 <a class="item item-icon-left" href="#">
+                    <i class="icon ion-person-stalker"></i> Perfil
+                    <span class="badge badge-assertive">Dibres 0</span>
+                </a>
+
+
+            </ion-list>
         </ion-content>
-      
-      
     </ion-side-menu>
-    
+
 </ion-side-menus>

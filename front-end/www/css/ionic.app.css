@@ -9073,22 +9073,23 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-.teste {
-  background-color: linear-gradient(120deg, #2d2e2e, #425a57, #476461); }
+.gradiente {
+  background: linear-gradient(120deg, #2d2e2e, #425a57, #476461); }
+  .gradiente color {
+    background-color: linear-gradient(120deg, #2d2e2e, #425a57, #476461); }
 
-.angle-gradient-svg {
-  background: linear-gradient(120deg, #2d2e2e, #425a57, #476461);
-  width: 80px;
-  height: 80px; }
+.side-menu-info {
+  margin-top: 70%;
+  margin-left: -5%; }
 
-.header-balanced:hover {
-  background-color: pink !important; }
+.avatar {
+  max-height: 80px !important;
+  max-width: 80px !important;
+  margin-top: 10%;
+  margin-left: 25%; }
 
-.menu .avatar {
-  top: 16px;
-  left: 72px !important;
-  width: 100px !important;
-  height: 100px !important; }
+.corTexto {
+  color: antiquewhite; }
 
-.bar-menu-avatar {
-  height: 0px !important; }
+.listaMenu {
+  color: antiquewhite; }

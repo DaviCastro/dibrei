@@ -18,34 +18,36 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+$gradiente :linear-gradient(120deg, rgb(45, 46, 46), rgb(66, 90, 87), rgb(71, 100, 97));
 
-.teste{
-    background-color: linear-gradient(120deg, rgb(45, 46, 46), rgb(66, 90, 87), rgb(71, 100, 97));
+$corPadraoMenu:antiquewhite;
+
+
+
+.gradiente {
+  background: $gradiente;
+      color{
+          background-color: $gradiente;
+      }
 }
 
 
-
-.angle-gradient-svg {
-  background: linear-gradient(120deg, rgb(45, 46, 46), rgb(66, 90, 87), rgb(71, 100, 97));
-  width: 80px;
-  height: 80px;
+.side-menu-info {
+  margin-top: 70%;
+  margin-left: -5%;
 }
 
-
-.header-balanced:hover{
-       
-            background-color: (pink !important);
-    
+.avatar {
+    max-height: 80px !important;
+    max-width: 80px !important;
+    margin-top: 10%;
+    margin-left: 25%;
 }
 
-.menu .avatar {
- 
-    top: 16px;
-    left: 72px !important;
-    width: 100px !important;
-    height: 100px !important;
- }
+.corTexto{
+    color:$corPadraoMenu;
+}
 
- .bar-menu-avatar {
- height:0px ! important;
- }
+.listaMenu{
+    color:$corPadraoMenu;
+}
