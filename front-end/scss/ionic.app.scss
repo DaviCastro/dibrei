@@ -38,9 +38,9 @@ $corPadraoMenu:antiquewhite;
 }
 
 .avatar {
-    max-height: 80px !important;
-    max-width: 80px !important;
-    margin-top: 20px;
+    max-height: 90px !important;
+    max-width: 90px !important;
+    margin-top: 10px;
     margin-left: 25%;
 }
 
@@ -51,3 +51,11 @@ $corPadraoMenu:antiquewhite;
 .listaMenu{
     color:$corPadraoMenu;
 }
+
+.button-confirmar {
+  background-color: green !important;
+  color:#FFF !important;
+}
+
+
+

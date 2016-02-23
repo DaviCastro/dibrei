@@ -9083,9 +9083,9 @@ a.button {
   margin-left: -5%; }
 
 .avatar {
-  max-height: 80px !important;
-  max-width: 80px !important;
-  margin-top: 20px;
+  max-height: 90px !important;
+  max-width: 90px !important;
+  margin-top: 10px;
   margin-left: 25%; }
 
 .corTexto {
@@ -9093,3 +9093,7 @@ a.button {
 
 .listaMenu {
   color: antiquewhite; }
+
+.button-confirmar {
+  background-color: green !important;
+  color: #FFF !important; }
