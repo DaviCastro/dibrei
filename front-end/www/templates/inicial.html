@@ -1,5 +1,5 @@
-<ion-view title="Próximas Peladas" hide-back-button="false" enable-menu-with-back-views="false">
-    <ion-content overflow-scroll="true" padding="true" class="has-header padding scroll-bg">
+<ion-view title="Próximas Peladas" hide-back-button="false">
+    <ion-content >
         
         <div class="spacer" style="width: 283px; height: 18px;"></div>
         <ion-list>
@@ -8,9 +8,45 @@
                 <h2>UNISYS</h2>
                 <p>03/02/2016 19:00 colocar botoes confirmar desconfirmar</p>
                 <div class="buttom-bar">
-                    <button class="button button-small icon-left ion-checkmark-circled button-confirmar" style="font-size:10px !important">Vou</button>
+                    <button class="button button-small icon-left ion-checkmark-circled  button-confirmar" style=" background-color:green;font-size:10px !important;color:white;">Vou</button>
                     <button class="button button-small icon-left ion-close-circled button-assertive" style="font-size:10px !important">Não</button>
                     
+                </div>
+                
+            </ion-item>
+
+         
+            <ion-item class="item-thumbnail-left" ui-sref="menu.listaPresenca">
+                <img ng-src="img/img.jpg">
+                <h2>UNISYS</h2>
+                <div class="spacer" style="height: 10px;">
+     
+                </div>
+                <div class="row row-center">
+                    <div class="col-30">
+                       <button class="button button-fab  green "><i class="icon  ion-checkmark-circled"></i></button>
+                    </div>          
+                     <div class="col-30 col-offset-10">
+                          <button class="button button-fab  "><i class="icon  ion-close-circled assertive  "></i></button>
+                    </div>      
+                </div>
+                
+            </ion-item>
+            
+            
+                <ion-item class="item-thumbnail-left" ui-sref="menu.listaPresenca">
+                <img ng-src="img/img.jpg">
+                <h2>UNISYS</h2>
+                <div class="spacer" style="height: 10px;">
+     
+                </div>
+                <div class="row row-center">
+                    <div class="col-30">
+                       <button class="button button-fab  green " style="background-color:green; color:white;">Vou</button>
+                    </div>          
+                     <div class="col-30 col-offset-10">
+                          <button class="button button-fab button-assertive assertive">Nao</button>
+                    </div>      
                 </div>
                 
             </ion-item>
@@ -18,23 +54,16 @@
             <ion-item class="item-thumbnail-left" ui-sref="menu.listaPresenca">
                 <img ng-src="img/img.jpg">
                 <h2>UNISYS</h2>
-                <p>03/02/2016 19:00 colocar botoes confirmar desconfirmar</p>
-                <div class="buttom-bar">
-                    <button class="button button-small icon-left ion-checkmark-circled button-confirmar" style="font-size:10px !important">Vou</button>
-                    <button class="button button-small icon-left ion-close-circled button-assertive" style="font-size:10px !important">Não</button>
-                    
+                <div class="spacer" style="height: 10px;">
+     
                 </div>
-                
-            </ion-item>
-
-            <ion-item class="item-thumbnail-left" ui-sref="menu.listaPresenca">
-                <img ng-src="img/img.jpg">
-                <h2>UNISYS</h2>
-                <p>03/02/2016 19:00 colocar botoes confirmar desconfirmar</p>
-                <div class="buttom-bar">
-                    <button class="button button-small icon-left ion-checkmark-circled button-confirmar" style="font-size:10px !important">Vou</button>
-                    <button class="button button-small icon-left ion-close-circled button-assertive" style="font-size:10px !important">Não</button>
-                    
+                <div class="row row-center">
+                    <div class="col-30">
+                        <a class=" button-icon  ion-checkmark-circled larger green">Vou</a>
+                    </div>          
+                     <div class="col-30 col-offset-10">
+                           <a class=" button-icon  ion-close-circled larger assertive" >Não</a>
+                    </div>      
                 </div>
                 
             </ion-item>

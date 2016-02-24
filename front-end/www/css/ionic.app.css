@@ -9094,6 +9094,8 @@ a.button {
 .listaMenu {
   color: antiquewhite; }
 
-.button-confirmar {
-  background-color: green !important;
-  color: #FFF !important; }
+.green {
+  color: green; }
+
+.larger {
+  font-size: x-large; }
