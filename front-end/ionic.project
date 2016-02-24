@@ -1,12 +1,4 @@
 {
-  "name": "Dibrei",
-  "app_id": "c94b139b",
-  "gulpStartupTasks": [
-    "sass",
-    "watch"
-  ],
-  "watchPatterns": [
-    "www/**/*",
-    "!www/lib/**/*"
-  ]
+  "name": "front-end",
+  "app_id": ""
 }

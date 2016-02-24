@@ -13,7 +13,7 @@ angular.module('app.controllers', [])
 })
    
 .controller('dibreiroCtrl', function($scope) {
-
+var s = this;
 })
    
 .controller('listaGrupoCtrl', function($scope) {
@@ -30,12 +30,12 @@ angular.module('app.controllers', [])
    
 .controller('listaPresencaCtrl', function($scope) {
 	this.aba = 1;
-	var mudarAba = function(abaEscolhida) {
+	this.mudarAba = function(abaEscolhida) {
 		this.aba = abaEscolhida;
-	}
-	var mostrarAba = function(abaAtual) {
+	};
+	this.mostrarAba = function(abaAtual) {
 		return this.aba === abaAtual;
-	}
+	};
 })
    
 .controller('avulsoCtrl', function($scope) {
