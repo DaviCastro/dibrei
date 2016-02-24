@@ -29,7 +29,13 @@ angular.module('app.controllers', [])
 })
    
 .controller('listaPresencaCtrl', function($scope) {
-
+	this.aba = 1;
+	var mudarAba = function(abaEscolhida) {
+		this.aba = abaEscolhida;
+	}
+	var mostrarAba = function(abaAtual) {
+		return this.aba === abaAtual;
+	}
 })
    
 .controller('avulsoCtrl', function($scope) {

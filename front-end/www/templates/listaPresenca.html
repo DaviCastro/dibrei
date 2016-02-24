@@ -1,17 +1,57 @@
-<ion-view title="Lista presenca" hide-back-button="true" enable-menu-with-back-views="false">
-    <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <div class="list card balanced">
-            <div class="item item-divider">Confirmados</div>
-            <div class="item item-body">
-                <ion-list>
-                    <ion-item>Item 1</ion-item>
-                    
-                </ion-list>
+<ion-view title="Pelada" hide-back-button="false" enable-menu-with-back-views="false">
+    <ion-content overflow-scroll="true">
+        <div class="hero gradiente" style="height: 150px;">
+            <div class="content">
+                <div class="avatar" style="background-image: url('img/img.jpg');"></div>
+                <h3><a class="light">Liga Unisys</a></h3>
+                <h4>24/02/2016 19:00</h4>
             </div>
-            <div class="item item-divider">Total</div>
         </div>
-        
-       
-      
+        <!-- <ion-tabs class="tabs tabs-top tabs-dark tabs-icon-top static">
+
+          <ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+            teste
+          </ion-tab>
+        </ion-tabs> -->
+
+
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a class="tab-item" ng-click="ctrl.mudarAba(1)">
+                <i class="icon ion-checkmark-round"></i> Confirmados
+            </a>
+            <a class="tab-item" ng-click="ctrl.mudarAba(2)">
+                <i class="icon ion-close-round"></i> Não Confirmados
+            </a>
+            <a class="tab-item">
+                <i class="icon ion-android-globe"></i> Local
+            </a>
+        </div>
+        <div id="confirmados" ng-show="ctrl.mostrarAba(1)">
+            a
+        </div>
+        <div id="nao-confirmados" ng-show="ctrl.mostrarAba(2)">
+            b
+        </div>
+        <!-- <div class="list">
+            <a ui-sref="app.friends" class="item item-avatar item-icon-right">
+                <img src="img/avatar.jpg">
+                <h2>Filipe Torres</h2>
+                <p>Matador</p>
+                <i class="icon ion-close"></i>
+            </a>
+            <a ui-sref="app.friends" class="item item-avatar item-icon-right">
+                <img src="img/avatar.jpg">
+                <h2>Rafael Leles</h2>
+                <p>Perna de pau</p>
+                <i class="icon ion-close"></i>
+            </a>
+            <a ui-sref="app.friends" class="item item-avatar item-icon-right">
+                <img src="img/avatar.jpg">
+                <h2>Doug</h2>
+                <p>Matador de canelas</p>
+                <i class="icon ion-close"></i>
+            </a>
+        </div>
+       -->
     </ion-content>
 </ion-view>

@@ -7,3 +7,5 @@ plugins/
 www/lib/**/*
 www/dist/*
 www/dist/
+.io-config.json
+ionic.project
