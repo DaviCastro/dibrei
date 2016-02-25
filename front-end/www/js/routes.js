@@ -31,11 +31,7 @@ angular.module('app.routes', [])
         
       
     
-      
 
-        
-      
-    
       
         
     .state('menu.dibreiro', {
