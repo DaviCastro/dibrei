@@ -43,7 +43,7 @@ angular.module('app.routes', [])
       
         
     .state('menu.grupo', {
-      url: '/grupo',
+      url: '/liga',
       views: {
         'side-menu21': {
           templateUrl: 'templates/grupo.html',
