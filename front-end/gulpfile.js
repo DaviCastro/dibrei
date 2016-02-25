@@ -9,7 +9,7 @@ var sh = require('shelljs');
 var watch = require('gulp-watch');
 
 var paths = {
-  sass: ['./scss/**/*.scss','./www/js/**/*.js']
+  sass: ['./scss/**/*.scss','./www/**/*.js']
 };
 
 gulp.task('default', ['sass']);
@@ -52,7 +52,7 @@ gulp.task('git-check', function(done) {
 });
 
 gulp.task('concat', function() {
-  return gulp.src('www/js/**/*.js')
+  return gulp.src('www/**/*.js')
     .pipe(concat('app.js'))
     .pipe(gulp.dest('www/dist/'));
 });

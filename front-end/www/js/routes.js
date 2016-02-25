@@ -8,17 +8,8 @@ angular.module('app.routes', [])
   // Each state's controller can be found in controllers.js
   $stateProvider
     
-      
-        
-    .state('login', {
-      url: '/login',
-      templateUrl: 'templates/login.html',
-      controller: 'loginCtrl'
-    })
-        
-      
-    
-      
+
+            
     .state('menu', {
       url: '/menu-lateral',
       abstract:true,
@@ -41,16 +32,7 @@ angular.module('app.routes', [])
       
     
       
-        
-    .state('menu.grupo', {
-      url: '/grupo',
-      views: {
-        'side-menu21': {
-          templateUrl: 'templates/grupo.html',
-          controller: 'grupoCtrl'
-        }
-      }
-    })
+
         
       
     
@@ -69,16 +51,7 @@ angular.module('app.routes', [])
       
     
       
-        
-    .state('menu.listaGrupo', {
-      url: '/grupoLista',
-      views: {
-        'side-menu21': {
-          templateUrl: 'templates/listaGrupo.html',
-          controller: 'listaGrupoCtrl'
-        }
-      }
-    })
+     
         
       
     
@@ -140,7 +113,5 @@ angular.module('app.routes', [])
       
     ;
 
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
 
 });

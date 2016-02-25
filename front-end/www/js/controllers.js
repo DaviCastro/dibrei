@@ -1,24 +1,17 @@
 angular.module('app.controllers', [])
   
-.controller('loginCtrl', function($scope) {
-
-})
-      
-.controller('inicialCtrl', function($scope) {
+  
+ .controller('inicialCtrl', function($scope) {
 
 })
    
-.controller('grupoCtrl', function($scope) {
 
-})
    
 .controller('dibreiroCtrl', function($scope) {
 var s = this;
 })
    
-.controller('listaGrupoCtrl', function($scope) {
 
-})
    
 .controller('peladaCtrl', function($scope) {
 
@@ -65,6 +58,6 @@ var s = this;
 })
 
 .config(['$ionicConfigProvider', function($ionicConfigProvider) {
-    $ionicConfigProvider.tabs.position('bottom');
+   
 }]);
  
