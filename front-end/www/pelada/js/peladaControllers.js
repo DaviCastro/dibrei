@@ -1,28 +1,23 @@
-angular.module('app.controllers', [])
-  
-  
- .controller('inicialCtrl', function($scope) {
+/**
+*
+* Description
+*/
+(function(){
+var app = angular.module('app.pelada', []);
 
-})
-   
+app.controller('peladaCtrl', function() {
 
+});
    
-.controller('dibreiroCtrl', function($scope) {
-var s = this;
-})
-   
+app.controller('peladaExecucaoCtrl', function() {
 
+});
    
-.controller('peladaCtrl', function($scope) {
+app.controller('listaPresencaCtrl', function($ionicPopup) {
 
-})
-   
-.controller('telaPeladaExecucaoCtrl', function($scope) {
+	var ctrl = this;
 
-})
-   
-.controller('listaPresencaCtrl', function($scope, $ionicPopup, $timeout) {
-	$scope.removerDibreiro = function() {
+	ctrl.removerDibreiro = function() {
 	   var confirmPopup = $ionicPopup.confirm({
 	     title: 'Remover Dibrei',
 	     template: 'Você tem certeza que deseja desconfirmar esse dibreiro?',
@@ -37,7 +32,7 @@ var s = this;
 	   });
 	 };
 
-	 $scope.confirmarDibreiro = function() {
+	 ctrl.confirmarDibreiro = function() {
 	   var confirmPopup = $ionicPopup.confirm({
 	     title: 'Confirmar Dibreiro',
 	     template: 'Você tem certeza que deseja confirmar esse dibreiro?',
@@ -51,13 +46,6 @@ var s = this;
 	     }
 	   });
 	 };
-})
-   
-.controller('avulsoCtrl', function($scope) {
+});
 
-})
-
-.config(['$ionicConfigProvider', function($ionicConfigProvider) {
-   
-}]);
- 
+})();

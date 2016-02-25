@@ -11,9 +11,19 @@
         'ionic',
         'ionic-material',
         'ngResource',
+        'app.routes',
         'app.config',
         'app.login',
+        'app.liga',
+        'app.menu',
+        'app.inicial',
+        'app.pelada',
+        'app.dibreiro',
+
     ]);
+
+
+    angular.module('app.routes', []);
 
     app.run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {

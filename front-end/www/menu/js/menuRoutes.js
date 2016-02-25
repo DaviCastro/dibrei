@@ -21,6 +21,6 @@ app.config(function($stateProvider) {
       
 
 
-}
+})
 
 })();

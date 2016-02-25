@@ -16,15 +16,15 @@ gulp.task('default', ['sass']);
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
-    .pipe(sass())
-    .on('error', sass.logError)
-    .pipe(gulp.dest('./www/css/'))
-    .pipe(minifyCss({
-      keepSpecialComments: 0
-    }))
-    .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./www/css/'))
-    .on('end', done);
+  .pipe(sass())
+  .on('error', sass.logError)
+  .pipe(gulp.dest('./www/css/'))
+  .pipe(minifyCss({
+    keepSpecialComments: 0
+  }))
+  .pipe(rename({ extname: '.min.css' }))
+  .pipe(gulp.dest('./www/css/'))
+  .on('end', done);
 });
 
 gulp.task('watch', function() {
@@ -33,9 +33,9 @@ gulp.task('watch', function() {
 
 gulp.task('install', ['git-check'], function() {
   return bower.commands.install()
-    .on('log', function(data) {
-      gutil.log('bower', gutil.colors.cyan(data.id), data.message);
-    });
+  .on('log', function(data) {
+    gutil.log('bower', gutil.colors.cyan(data.id), data.message);
+  });
 });
 
 gulp.task('git-check', function(done) {
@@ -45,14 +45,25 @@ gulp.task('git-check', function(done) {
       '\n  Git, the version control system, is required to download Ionic.',
       '\n  Download git here:', gutil.colors.cyan('http://git-scm.com/downloads') + '.',
       '\n  Once git is installed, run \'' + gutil.colors.cyan('gulp install') + '\' again.'
-    );
+      );
     process.exit(1);
   }
   done();
 });
 
+
+var basePath = 'www/';
+
+
 gulp.task('concat', function() {
-  return gulp.src('www/**/*.js')
-    .pipe(concat('app.js'))
-    .pipe(gulp.dest('www/dist/'));
+  return gulp.src(['www/common/**/*.js',
+    'www/dibreiro/**/*.js',
+    'www/inicial/**/*.js',
+    'www/liga/**/*.js',
+    'www/login/**/*.js',
+    'www/login/**/*.js',
+    'www/menu/**/*.js',
+    'www/pelada/**/*.js'])
+  .pipe(concat('app.js'))
+  .pipe(gulp.dest('www/dist/'));
 });

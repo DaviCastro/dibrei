@@ -4,8 +4,7 @@
 
 	app.config(function($stateProvider, $urlRouterProvider) {
 
-
-		$stateProvider.state('menu.inicial', {
+	$stateProvider.state('menu.inicial', {
 			url: '/inicial',
 			views: {
 				'side-menu21': {
@@ -14,8 +13,12 @@
 					controllerAs: 'ctrl'
 				}
 			}
-		})
+		});
 
+	});
+
+
+	
 
 
 	})();
