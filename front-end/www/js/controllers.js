@@ -63,4 +63,8 @@ var s = this;
 .controller('avulsoCtrl', function($scope) {
 
 })
+
+.config(['$ionicConfigProvider', function($ionicConfigProvider) {
+    $ionicConfigProvider.tabs.position('bottom');
+}]);
  
