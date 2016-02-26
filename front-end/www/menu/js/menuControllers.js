@@ -6,7 +6,7 @@
 (function () {
      var app  = angular.module('app.menu',[]);
 
-     app.controller('menuCtrl', ['', function(){
+     app.controller('menuCtrl',['$ionicLoading', function ($ionicLoading){
      	
      }]);
 

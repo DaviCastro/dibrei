@@ -5,15 +5,15 @@
 (function(){
 var app = angular.module('app.pelada', []);
 
-app.controller('peladaCtrl', function() {
+app.controller('peladaCtrl', [function() {
 
-});
+}]);
    
-app.controller('peladaExecucaoCtrl', function() {
+app.controller('peladaExecucaoCtrl', [function() {
 
-});
+}]);
    
-app.controller('listaPresencaCtrl', function($ionicPopup) {
+app.controller('listaPresencaCtrl', [function($ionicPopup) {
 
 	var ctrl = this;
 
@@ -46,6 +46,6 @@ app.controller('listaPresencaCtrl', function($ionicPopup) {
 	     }
 	   });
 	 };
-});
+}]);
 
 })();

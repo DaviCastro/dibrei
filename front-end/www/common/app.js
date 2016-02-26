@@ -22,7 +22,6 @@
 
     ]);
 
-
     angular.module('app.routes', []);
 
     app.run(function ($ionicPlatform) {

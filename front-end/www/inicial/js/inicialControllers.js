@@ -2,7 +2,7 @@
 	var app = angular.module('app.inicial', []);
 
 
-	app.controller('inicialCtrl', ['', function(){
+	app.controller('inicialCtrl', ['$ionicLoading', function ($ionicLoading){
 		
 	}]);
 
