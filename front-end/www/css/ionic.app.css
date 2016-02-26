@@ -9099,3 +9099,9 @@ a.button {
 
 .larger {
   font-size: x-large; }
+
+.bar-balanced {
+  background-color: #2c3d3b !important; }
+
+.button.button-balanced:hover {
+  background-color: #587773 !important; }

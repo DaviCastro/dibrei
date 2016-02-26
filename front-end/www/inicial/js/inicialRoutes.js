@@ -6,6 +6,7 @@
 
 	$stateProvider.state('menu.inicial', {
 			url: '/inicial',
+			cache: false,
 			views: {
 				'side-menu21': {
 					templateUrl: 'inicial/html/inicial.html',
