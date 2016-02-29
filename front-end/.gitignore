@@ -5,5 +5,6 @@ node_modules/
 platforms/
 plugins/
 www/lib/**/*
+www/dist/**/*
 .io-config.json
 ionic.project
