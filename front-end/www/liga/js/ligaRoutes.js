@@ -23,8 +23,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
       }
     })
 
-
-
     .state('menu.listaLiga', {
       url: '/listaLiga',
       views: {
