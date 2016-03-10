@@ -1,3 +1,5 @@
+import java.util.Random;
+
 
 
 public class Jogador implements Comparable<Jogador>{
@@ -5,6 +7,7 @@ public class Jogador implements Comparable<Jogador>{
 	private Integer nota;
 	private String nome;
 	private Integer time;
+	private static Random random = new Random();
 	
 	public Jogador(int i, String string) {
 		
@@ -14,6 +17,9 @@ public class Jogador implements Comparable<Jogador>{
 
 	@Override
 	public int compareTo(Jogador o) {
+		if(o.getNota() == this.getNota()){
+			return random.nextBoolean()?1:-1;
+		}
 		return o.nota > nota?1:-1;
 	}
 
