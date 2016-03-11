@@ -28,7 +28,6 @@ public class Sorteio {
 	}
 
 	private static void ordenaJogadores() {
-		// MergeSorte é stable, quero isto mais aleatório.
 		Collections.sort(jogadores);
 
 	}
@@ -102,8 +101,8 @@ public class Sorteio {
 	}
 
 	private static void adicionaJogadores() {
-		jogadores.add(new Jogador(7, "Cunhado Jackson"));
-		jogadores.add(new Jogador(7, "Egidio"));
+		jogadores.add(new Jogador(8, "Cunhado Jackson"));
+		jogadores.add(new Jogador(8, "Egidio"));
 		jogadores.add(new Jogador(4, "Filipe"));
 		// jogadores.add(new Jogador(6,"Ganso"));
 		jogadores.add(new Jogador(8, "Jackson"));
