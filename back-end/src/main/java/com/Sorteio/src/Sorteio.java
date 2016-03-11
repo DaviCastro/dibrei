@@ -85,7 +85,7 @@ public class Sorteio {
 		notaAvulso = calculaAvulso(jogadores);
 		int qtdJogadores = jogadores.size();
 		for (int i = 0; i < (qtdJogadores / jogadoresporTime); i++) {
-			jogadores.add(new Jogador(0, "Avulso"));
+			jogadores.add(new Jogador(notaAvulso, "Avulso"));
 		}
 
 	}
