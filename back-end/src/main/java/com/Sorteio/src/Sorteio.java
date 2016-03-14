@@ -84,7 +84,8 @@ public class Sorteio {
 	private static void adicionaAvulsos() {
 		notaAvulso = calculaAvulso(jogadores);
 		int qtdJogadores = jogadores.size();
-		for (int i = 0; i < (qtdJogadores % jogadoresporTime); i++) {
+		int faltam = jogadoresporTime- (qtdJogadores % jogadoresporTime);
+		for (int i = 0; i < faltam; i++) {
 			jogadores.add(new Jogador(0, "Avulso"));
 		}
 
@@ -109,14 +110,14 @@ public class Sorteio {
 		jogadores.add(new Jogador(6,"JOtavio"));
 		jogadores.add(new Jogador(5, "Leles"));
 		jogadores.add(new Jogador(5, "Paulinho"));
-		jogadores.add(new Jogador(4, "Irmao Paulinho"));
+//		jogadores.add(new Jogador(4, "Irmao Paulinho"));
 		jogadores.add(new Jogador(6, "Rodolfo"));
 		jogadores.add(new Jogador(3, "Doug"));
 		jogadores.add(new Jogador(9, "Orlando"));
 		jogadores.add(new Jogador(5, "Pimenta"));
 		jogadores.add(new Jogador(6, "TIzil"));
-		jogadores.add(new Jogador(4, "Robson"));
-		//jogadores.add(new Jogador(6, "Pedro"));
+//		jogadores.add(new Jogador(4, "Robson"));
+		jogadores.add(new Jogador(6, "Pedro"));
 		
 	}
 }
