@@ -6,7 +6,8 @@
   },
   "dependencies": {
     "ionic-material": "~0.4.2",
-    "angular-resource": "~1.5.0"
+    "angular-resource": "~1.5.0",
+    "ngstorage": "~0.3.10"
   },
   "resolutions": {
     "ionic": "1.2.4",

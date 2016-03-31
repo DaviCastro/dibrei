@@ -11,6 +11,7 @@
         'ionic',
         'ionic-material',
         'ngResource',
+        'ngStorage',
         'app.routes',
         'app.config',
         'app.login',

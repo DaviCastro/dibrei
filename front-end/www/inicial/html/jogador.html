@@ -1,0 +1,50 @@
+<ion-view title="Jogador" id="page28">
+<ion-content overflow-scroll="true" padding="true" class="has-header">
+
+
+
+<button class="button" ng-click="jogadorCtrl.addJogador()">Novo</button>
+
+<ion-list>
+<ion-item ng-repeat="jogador in jogadorCtrl.jogadores">
+
+
+<div class="row">
+	<div class="col col-50">
+		<label class="item item-input item-floating-label">
+			<span class="input-label">First Name</span>
+			<input type="text" placeholder="First Name">
+		</label>
+
+
+
+	</div>
+
+	<div class="col col-50">
+		
+		
+		<label class="item item-input item-select">
+			<div class="input-label">
+				Nota
+			</div>
+			<select>
+				<option>1</option>
+				<option selected>2</option>
+				<option>3</option>
+			</select>
+		</label>
+
+	</div>
+
+
+</div>
+
+</div>
+
+
+</ion-item>
+</ion-list>
+
+
+</ion-content>
+</ion-view>
