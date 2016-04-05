@@ -1,3 +1,51 @@
 <ion-view title="Configurações" id="page3">
-    <ion-content overflow-scroll="true" padding="true" class="has-header"></ion-content>
+<ion-content overflow-scroll="true" padding="true" class="has-header">
+
+
+
+<div class="card">
+	<div class="item item-divider">
+		Jogadores Por Time
+	</div>
+		<label class="item item-input item-select">
+			<div class="input-label">
+				Jogadores
+			</div>
+			<select ng-model="ctrl.jogadoresPorTime">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option >5</option>
+				<option>6</option>
+				<option>7</option>
+				<option >8</option>
+				<option>9</option>
+				<option>10</option>
+				<option>11</option>
+			</select>
+		</label>
+
+</div>
+
+
+<div class="card">
+	<div class="item item-divider">
+		Jogador avulso com nota Média
+	</div>
+	<div class="item item-text-wrap">
+		<ion-checkbox ng-model="ctrl.avulsoMedio">Nota Média</ion-checkbox>
+	</div>
+
+</div>
+
+
+
+</ion-content>
+
+
+
+
+
+
 </ion-view>

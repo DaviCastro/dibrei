@@ -3,17 +3,29 @@
 
 
 
-<button class="button" ng-click="jogadorCtrl.addJogador()">Novo</button>
+
+
+
+
+<button class="button button-fab button-fab-top-right expanded button-balanced" ng-click="jogadorCtrl.addJogador()">
+	
+ <i class="icon ion ion-android-add"></i>
+
+</button>
+
 
 <ion-list>
+
+
+
+
 <ion-item ng-repeat="jogador in jogadorCtrl.jogadores">
 
 
 <div class="row">
 	<div class="col col-50">
-		<label class="item item-input item-floating-label">
-			<span class="input-label">First Name</span>
-			<input type="text" placeholder="First Name">
+		<label class="item item-input">
+			<input type="text" ng-model="jogador.nome" placeholder="Nome">
 		</label>
 
 
@@ -27,10 +39,17 @@
 			<div class="input-label">
 				Nota
 			</div>
-			<select>
+			<select ng-model="jogador.nota">
 				<option>1</option>
-				<option selected>2</option>
+				<option>2</option>
 				<option>3</option>
+				<option>4</option>
+				<option >5</option>
+				<option>6</option>
+				<option>7</option>
+				<option >8</option>
+				<option>9</option>
+				<option>10</option>
 			</select>
 		</label>
 
@@ -39,11 +58,20 @@
 
 </div>
 
-</div>
+
+  <ion-option-button class="button-assertive"
+                             ng-click="jogadorCtrl.removerJogador(jogador)">
+
+                              <i class="icon  ion-android-close"></i>
+         
+          </ion-option-button>
+        
 
 
 </ion-item>
+
 </ion-list>
+
 
 
 </ion-content>
