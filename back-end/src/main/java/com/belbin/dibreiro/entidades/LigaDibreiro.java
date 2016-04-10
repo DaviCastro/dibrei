@@ -38,7 +38,7 @@ public class LigaDibreiro implements java.io.Serializable {
 		return this.dibreiro;
 	}
 
-	public void setDibtb002Dibreiro(Dibreiro dibreiro) {
+	public void setDibreiro(Dibreiro dibreiro) {
 		this.dibreiro = dibreiro;
 	}
 
