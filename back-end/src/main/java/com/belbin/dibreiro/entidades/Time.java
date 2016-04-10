@@ -5,12 +5,16 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "dibtb006_time", schema = "public")
+@SequenceGenerator(name = "dibsq006_time", sequenceName = "dibsq006_time", allocationSize = 1, schema = "public")
 public class Time implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -20,6 +24,7 @@ public class Time implements java.io.Serializable {
 
 	@Id
 	@Column(name = "id_time", unique = true, nullable = false)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "dibsq006_time")
 	public long getIdTime() {
 		return this.idTime;
 	}

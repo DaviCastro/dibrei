@@ -5,12 +5,16 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "dibtb002_dibreiro", schema = "public")
+@SequenceGenerator(name = "dibsq002_dibreiro", sequenceName = "dibsq002_dibreiro", allocationSize = 1, schema = "public")
 public class Dibreiro implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -23,6 +27,7 @@ public class Dibreiro implements java.io.Serializable {
 
 	@Id
 	@Column(name = "id_dibreiro", unique = true, nullable = false)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "dibsq002_dibreiro")
 	public int getIdDibreiro() {
 		return this.idDibreiro;
 	}

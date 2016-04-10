@@ -6,16 +6,20 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "dibtb004_pelada", schema = "public")
+@SequenceGenerator(name = "dibsq004_pelada", sequenceName = "dibsq004_pelada", allocationSize = 1, schema = "public")
 public class Pelada implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -27,11 +31,10 @@ public class Pelada implements java.io.Serializable {
 	private boolean fixa;
 	private Date dataMarcarPelada;
 	private Set<Presenca> presencas;
-	
-	
 
 	@Id
 	@Column(name = "id_pelada", unique = true, nullable = false)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "dibsq004_pelada")
 	public long getIdPelada() {
 		return this.idPelada;
 	}

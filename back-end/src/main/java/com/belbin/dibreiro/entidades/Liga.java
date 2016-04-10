@@ -5,12 +5,16 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "dibtb001_liga", schema = "public")
+@SequenceGenerator(name = "dibsq001_liga", sequenceName = "dibsq001_liga", allocationSize = 1, schema = "public")
 public class Liga implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -23,6 +27,7 @@ public class Liga implements java.io.Serializable {
 
 	@Id
 	@Column(name = "id_ligadd", unique = true, nullable = false)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "dibsq001_liga")
 	public int getIdLiga() {
 		return this.idLiga;
 	}
