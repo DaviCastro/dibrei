@@ -26,7 +26,7 @@ public class Liga implements java.io.Serializable {
 	private Set<Pelada> peladas;
 
 	@Id
-	@Column(name = "id_ligadd", unique = true, nullable = false)
+	@Column(name = "id_liga", unique = true, nullable = false)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "dibsq001_liga")
 	public int getIdLiga() {
 		return this.idLiga;
@@ -68,7 +68,7 @@ public class Liga implements java.io.Serializable {
 		return this.ligasDibreiro;
 	}
 
-	public void setLigaDibreiro(Set<LigaDibreiro> ligasDibreiro) {
+	public void setLigasDibreiro(Set<LigaDibreiro> ligasDibreiro) {
 		this.ligasDibreiro = ligasDibreiro;
 	}
 

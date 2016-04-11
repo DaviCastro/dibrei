@@ -14,7 +14,7 @@
 		<class>com.belbin.dibreiro.entidades.Time</class>
 		<class>com.belbin.dibreiro.entidades.Avulso</class>
 
-
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
