@@ -2,8 +2,13 @@
 	var app = angular.module('app.inicial', []);
 
 
-	app.controller('inicialCtrl', function ($timeout, ionicMaterialInk, ionicMaterialMotion){
-		
+	app.controller('inicialCtrl', function ($state){
+
+        var ctrl = this;
+
+        ctrl.trocaStatus = function(state){
+            $state.go(state, {reload:true});
+        }
 
     });
 
@@ -13,13 +18,13 @@
         var ctrl = this;
         ctrl.jogadores=[];
         ctrl.constructor = function(){
-            ctrl.jogadores = jogadorService.getJogadores().slice(0);
+            ctrl.jogadores = jogadorService.getJogadores();
         }
 
         ctrl.constructor();
 
         ctrl.addJogador= function (){
-            ctrl.jogadores.push(new Jogador("","",""));
+            ctrl.jogadores.push(new Jogador("","1",null,0));
         }
 
 
@@ -32,9 +37,14 @@
 
         }
 
-        $scope.$on('$ionicView.beforeLeave', function(){
+
+        $scope.$watch(function() {
+            return ctrl.jogadores;
+        }, function(current, original) {
+                if(current!+original)
             jogadorService.setJogadores(ctrl.jogadores);
-        });
+        },true);
+
 
     }]);
 
@@ -53,9 +63,18 @@
 
         ctrl.constructor();
 
-
-        $scope.$on('$ionicView.beforeLeave', function(){
+        $scope.$watch(function() {
+            return ctrl.jogadoresPorTime;
+        }, function(current, original) {
+            if(current!=original)
             jogadorService.setJogadoresPorTime(ctrl.jogadoresPorTime);
+        });
+
+
+        $scope.$watch(function() {
+            return ctrl.avulsoMedio;
+        }, function(current, original) {
+            if(current!=original)
             jogadorService.setAvulsoMedio(ctrl.avulsoMedio);
         });
 
@@ -73,7 +92,7 @@
         ctrl.jogadores;
 
         ctrl.constructor = function(){
-            ctrl.jogadores = jogadorService.getJogadores().slice(0);
+            ctrl.jogadores = jogadorService.getJogadores();
             ctrl.jogadoresPorTime = jogadorService.getJogadoresPorTime();
             ctrl.avulsoMedio = jogadorService.getAvulsoMedio();
             ctrl.times = [];
@@ -102,7 +121,7 @@
 
 
             for (var index = 0; index < totalFaltantes; index++) {
-                ctrl.jogadores.push(new Jogador("NovoJogador " + (index + 1), notaAvulso, 0));
+                ctrl.jogadores.push(new Jogador("NovoJogador " + (index + 1), notaAvulso, 0,0));
             }
 
 
@@ -164,38 +183,101 @@
     }
 
 
-     ctrl.criarTimes= function(numeroTimes,jogadores){
-            
-            this.times = [];
-            
-            for(var index = 0; index < numeroTimes; index++) {
-                
-                this.times.push(new Time(index,jogadores.filter(function(x){return x.time===index})));
-                
-            }
+    ctrl.criarTimes= function(numeroTimes,jogadores){
 
-       
+        this.times = [];
+
+        for(var index = 0; index < numeroTimes; index++) {
+
+            this.times.push(new Time(index,jogadores.filter(function(x){return x.time===index})));
+
+        }
+
+
     }
 
 
     ctrl.faltamJogadoresNoPote = function(min, max){
 
-         for (var u = min; u <= max; u++) {
+     for (var u = min; u <= max; u++) {
 
-            if (this.jogadores[u].time === null) {
-                return true;
-            }
+        if (this.jogadores[u].time === null) {
+            return true;
         }
-        return false;
-
     }
+    return false;
+
+}
 
 
-    ctrl.atribuirTime = function(time,jogador){
-             jogador.time = time;
-    }
+ctrl.atribuirTime = function(time,jogador){
+ jogador.time = time;
+}
+
+
+ctrl.getNotaTotal = function(time){
+   return time.jogadores.reduce(function(memo, jogador){
+    return memo + parseInt(jogador.nota);
+}, 0);
+};
+
+
+
 
 }]);
+
+
+    app.controller('peladaECtrl', ['jogadorService','$scope',function (jogadorService,$scope){
+
+        var ctrl = this;
+        ctrl.jogadores=[];
+        ctrl.constructor = function(){
+            ctrl.jogadores = jogadorService.getJogadores();
+        }
+
+        ctrl.constructor();
+
+        ctrl.marcarGol= function(jogador){
+            jogador.gols=isNaN(jogador.gols)?1:jogador.gols+1;
+            jogadorService.setJogadores(ctrl.jogadores)
+        }
+
+
+
+        ctrl.retirarGol= function(jogador){
+            jogador.gols=isNaN(jogador.gols)?0:jogador.gols-1;
+            jogadorService.setJogadores(ctrl.jogadores)
+        }
+
+
+
+        ctrl.timerRunning = true;
+        ctrl.startTimer = function (){
+
+            if(!ctrl.timerRunning){
+                $scope.$broadcast('timer-resume');   
+            }else{
+                $scope.$broadcast('timer-start');
+            }
+            ctrl.timerRunning = true;
+
+        };
+        ctrl.stopTimer = function (){
+            $scope.$broadcast('timer-stop');
+            ctrl.timerRunning = false;
+        };
+        $scope.$on('timer-stopped', function (event, data){
+            console.log('Timer Stopped - data = ', data);
+        });
+
+        ctrl.resetTimer = function(){
+          $scope.$broadcast('timer-reset');
+      }
+
+
+
+
+  }]);
 
 
 

@@ -4,14 +4,29 @@
 
 
 
-
-
-
-<button class="button button-fab button-fab-top-right expanded button-balanced" ng-click="jogadorCtrl.addJogador()">
+<div class="row">
 	
- <i class="icon ion ion-android-add"></i>
+<div class="col col-90">
+	
+	<button style="border-radius: 60px;" id="jogador-button4" ng-click="ctrl.addJogador()" class="button button-balanced  button-block"><i class="icon ion ion-android-person-add "></i></button>
 
-</button>
+</div>
+
+
+<div  style="margin-top: 17px;text-align: end;"class="col">
+	
+	<h3>{{ctrl.jogadores.length}}</h3>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
 
 
 <ion-list>
@@ -19,7 +34,7 @@
 
 
 
-<ion-item ng-repeat="jogador in jogadorCtrl.jogadores">
+<ion-item ng-repeat="jogador in ctrl.jogadores">
 
 
 <div class="row">
@@ -35,23 +50,20 @@
 	<div class="col col-50">
 		
 		
-		<label class="item item-input item-select">
-			<div class="input-label">
-				Nota
-			</div>
-			<select ng-model="jogador.nota">
-				<option>1</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-				<option >5</option>
-				<option>6</option>
-				<option>7</option>
-				<option >8</option>
-				<option>9</option>
-				<option>10</option>
-			</select>
-		</label>
+
+		<select class="item item-input item-select" ng-model="jogador.nota">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option >5</option>
+			<option>6</option>
+			<option>7</option>
+			<option >8</option>
+			<option>9</option>
+			<option>10</option>
+		</select>
+		
 
 	</div>
 
@@ -59,13 +71,13 @@
 </div>
 
 
-  <ion-option-button class="button-assertive"
-                             ng-click="jogadorCtrl.removerJogador(jogador)">
+<ion-option-button class="button-balanced button-small"
+ng-click="ctrl.removerJogador(jogador)">
 
-                              <i class="icon  ion-android-close"></i>
-         
-          </ion-option-button>
-        
+<i class="icon  ion-android-close"></i>
+
+</ion-option-button>
+
 
 
 </ion-item>

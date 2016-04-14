@@ -1,12 +1,32 @@
 <ion-view title="Times" id="page4">
-    <ion-content overflow-scroll="true" padding="true" class="has-header">
+<ion-content overflow-scroll="true" padding="true" class="has-header">
 
 
-<button class="button button-fab button-fab-top-right expanded button-balanced" ng-click="ctrl.construirTimes()">
+<div class="row">
 	
- <i class="icon ion ion-android-add"></i>
+<div class="col col-100">
+	
+	<button style="border-radius: 60px;" id="jogador-button4" ng-click="ctrl.construirTimes()" class="button button-balanced  button-block">Sortear</button>
 
-</button>
+</div>
+</div>
 
-    </ion-content>
+
+
+
+
+
+
+
+
+
+<div ng-repeat="timeSelecionado in ctrl.times" style="border-radius: 30px;" class="card">
+	<div class="item item-divider">
+		<h2>Time {{timeSelecionado.numeroTime +1 }} Nota Total: {{ctrl.getNotaTotal(timeSelecionado)}}</h1>
+		</div>
+		<div ng-repeat="jogador in timeSelecionado.jogadores" class="item item-text-wrap">
+			<h3>Nome: {{jogador.nome}} Nota:{{jogador.nota}}</h3>
+		</div>
+	</div>
+</ion-content>
 </ion-view>

@@ -1,0 +1,55 @@
+<ion-view title="Pelada" id="page4">
+<ion-content overflow-scroll="true" padding="true" class="has-header">
+
+
+
+<div class="row">
+	<div class="col col"> <h3>Tempo <timer autostart="false">{{mminutes}} : {{sseconds}}  </timer></h3></div>
+	
+</div>
+
+<div class="row">
+
+	
+	<div class="col">  <button style="border-radius:60px; " class="button button-small  button-balanced" ng-click="ctrl.startTimer()">
+
+				<i class="icon ion ion-play"></i>
+
+			</button></div>
+
+			<div class="col">  <button style="border-radius:60px; " class="button button-small  button-balanced" ng-click="ctrl.stopTimer()">
+
+				<i class="icon ion ion-pause"></i>
+
+			</button></div>
+
+			<div class="col">  <button style="border-radius:60px; " class="button button-small  button-assertive" ng-click="ctrl.resetTimer()">
+
+				<i class="icon ion ion-refresh"></i>
+
+			</button></div>
+</div>
+
+<div style="border-radius: 30px;" class="card">
+
+	<div ng-repeat="jogador in ctrl.jogadores" class="item item-text-wrap">
+		<div class="row">
+			<div class="col"><h3> {{jogador.nome}} Gols : {{jogador.gols}}</h3></div>
+			<div class="col"> <button style="border-radius:60px; " class="button button-small  button-balanced" ng-click="ctrl.marcarGol(jogador)">
+
+				<i class="icon ion ion-plus-circled"></i>
+
+			</button></div>
+
+			<div class="col"> <button style="border-radius:60px; " class="button button-small  button-assertive" ng-click="ctrl.retirarGol(jogador)">
+
+				<i class="icon ion ion-minus-circled"></i>
+
+			</button></div>
+
+			
+		</div>
+	</div>
+</div>
+</ion-content>
+</ion-view>

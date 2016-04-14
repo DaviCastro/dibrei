@@ -12,6 +12,7 @@
         'ionic-material',
         'ngResource',
         'ngStorage',
+        'timer',
         'app.routes',
         'app.config',
         'app.login',

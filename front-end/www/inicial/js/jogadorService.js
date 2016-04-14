@@ -5,7 +5,13 @@
     app.service('jogadorService', ['$localStorage',function($localStorage){
 
      this.getJogadores = function(){
-             return $localStorage.jogadores || [];
+
+                var temporario=[];
+            $localStorage.jogadores.forEach(function(jogador){
+                    temporario.push(new Jogador(jogador._nome, jogador._nota, jogador._time,jogador._gols));
+            });
+
+             return temporario;
      }
 
      this.setJogadores = function(jogadores){
@@ -14,7 +20,7 @@
 
     this.getJogadoresPorTime = function() {
 
-        return $localStorage.jogadoresPorTime || 0;
+        return $localStorage.jogadoresPorTime || 1;
     }
 
     this.setJogadoresPorTime = function(numero) {
