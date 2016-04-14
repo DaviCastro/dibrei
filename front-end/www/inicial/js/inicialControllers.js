@@ -41,7 +41,7 @@
         $scope.$watch(function() {
             return ctrl.jogadores;
         }, function(current, original) {
-                if(current!+original)
+            if(current != original)
             jogadorService.setJogadores(ctrl.jogadores);
         },true);
 

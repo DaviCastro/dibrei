@@ -42,7 +42,6 @@
 
 		.state('menu.inicial.times', {
 			url: '/times',
-			cache: false,
 			views: {
 				'tab3': {
 					templateUrl: 'inicial/html/times.html',

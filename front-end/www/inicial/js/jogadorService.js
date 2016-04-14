@@ -4,19 +4,25 @@
 
     app.service('jogadorService', ['$localStorage',function($localStorage){
 
-     this.getJogadores = function(){
+       this.getJogadores = function(){
 
-                var temporario=[];
+        var temporario=[];
+        if($localStorage.jogadores!==undefined){
             $localStorage.jogadores.forEach(function(jogador){
-                    temporario.push(new Jogador(jogador._nome, jogador._nota, jogador._time,jogador._gols));
+                temporario.push(new Jogador(jogador._nome, jogador._nota, jogador._time,jogador._gols));
             });
+        }
 
-             return temporario;
-     }
+       temporario.sort(function(a,b){
+            
+            return a.nome.toLowerCase() > b.nome.toLowerCase() ? 1 : -1;
+        });
+        return temporario;
+    }
 
-     this.setJogadores = function(jogadores){
-            $localStorage.jogadores = jogadores;
-     }
+    this.setJogadores = function(jogadores){
+        $localStorage.jogadores = jogadores;
+    }
 
     this.getJogadoresPorTime = function() {
 
@@ -27,7 +33,7 @@
         $localStorage.jogadoresPorTime = numero;
     }
     
-     this.getAvulsoMedio = function() {
+    this.getAvulsoMedio = function() {
         return $localStorage.avulsoMedio || false;
     }
     
