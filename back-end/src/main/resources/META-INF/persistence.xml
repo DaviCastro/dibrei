@@ -2,18 +2,27 @@
 <persistence version="2.1"
 	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-	<persistence-unit transaction-type="JTA" name="belbin-unit">
+	<persistence-unit name="DibreiDS">
 
+		<jta-data-source>java:/DibreiDS</jta-data-source>
 
-		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<jta-data-source>java:jboss/datasources/app-ds</jta-data-source>
+		<class>com.belbin.dibreiro.entidades.Liga</class>
+		<class>com.belbin.dibreiro.entidades.Dibreiro</class>
+		<class>com.belbin.dibreiro.entidades.LigaDibreiro</class>
+		<class>com.belbin.dibreiro.entidades.Pelada</class>
+		<class>com.belbin.dibreiro.entidades.Presenca</class>
+		<class>com.belbin.dibreiro.entidades.Time</class>
+		<class>com.belbin.dibreiro.entidades.Avulso</class>
 
-
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
-			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+			<property name="hibernate.hbm2ddl.auto" value="validate" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.HashtableCacheProvider" />
 		</properties>
-
 
 	</persistence-unit>
 </persistence>
