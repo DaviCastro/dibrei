@@ -4,7 +4,7 @@
 * Description
 */
 
-(function(){
+(function(){ 
 
 
 	var app = angular.module('app.routes');
@@ -32,7 +32,6 @@
 				}
 			}
 		})
-
 		.state('menu.listaPresenca', {
 			url: '/page8',
 			views: {
