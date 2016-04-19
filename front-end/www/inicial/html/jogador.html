@@ -33,19 +33,21 @@
 
 
 
+<div ng-repeat="jogador in ctrl.jogadores">
+<ion-item  ng-class="{'jogadorAtivo': !jogador.ativo}">
 
-<ion-item ng-repeat="jogador in ctrl.jogadores">
 
-
-<div class="row">
+<div class="row" >
 	<div class="col col-50">
 		<label class="item item-input">
-			<input type="text" ng-model="jogador.nome" placeholder="Nome">
+			<input type="text" ng-model="jogador.nome" placeholder="Nome"> </input>
 		</label>
 
 
 
 	</div>
+
+
 
 	<div class="col col-50">
 		
@@ -79,8 +81,16 @@ ng-click="ctrl.removerJogador(jogador)">
 </ion-option-button>
 
 
+<ion-option-button class="button-assertive button-small"
+ng-click="ctrl.desabilitarJogador(jogador)">
+
+<i class="icon  ion-ios-body-outline"></i>
+
+</ion-option-button>
+
 
 </ion-item>
+</div>
 
 </ion-list>
 

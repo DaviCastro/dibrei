@@ -4,13 +4,12 @@
 
 <div class="row">
 	
-<div class="col col-100">
-	
-	<button style="border-radius: 60px;" id="jogador-button4" ng-click="ctrl.construirTimes()" class="button button-balanced  button-block">Sortear</button>
+	<div class="col col-100">
 
-</div>
-</div>
+		<button style="border-radius: 60px;" id="jogador-button4" ng-click="ctrl.construirTimes()" class="button button-balanced  button-block">Sortear</button>
 
+	</div>
+</div>
 
 
 
@@ -21,12 +20,51 @@
 
 
 <div ng-repeat="timeSelecionado in ctrl.times" style="border-radius: 30px;" class="card">
-	<div class="item item-divider">
-		<h2>Time {{timeSelecionado.numeroTime +1 }} Nota Total: {{ctrl.getNotaTotal(timeSelecionado)}}</h1>
+	
+	<div class="row">
+
+	<div class="col col-70">
+			<div class="row">
+				<div class="col">
+					<div class="item ">
+						<h2>Time {{timeSelecionado.numeroTime +1 }} Nota: {{ctrl.getNotaTotal(timeSelecionado)}} Vitorias: {{timeSelecionado.vitorias }}</h1>
+						</div>
+						<div ng-repeat="jogador in timeSelecionado.jogadores" class="item item-text-wrap">
+							<h3>Nome: {{jogador.nome}} Nota:{{jogador.nota}}</h3>
+						</div>
+					</div>
+
+
+				</div>
+
+
+			</div>
+			<div class="col col-30">
+
+				<div class="row ">
+
+					<div class="col  ">  
+						<button style="border-radius: 100px;" id="jogador-button4" ng-click="ctrl.adicionarVitoria(timeSelecionado)" class="button button-balanced  button-block"><i class="icon ion ion-ios-plus-outline "></i></button>
+
+					</div>
+					
+					
+
+				</div>
+				<div class="row ">
+					<div class="col   ">  
+						<button style="border-radius: 100px;" id="jogador-button4" ng-click="ctrl.adicionarDerrota(timeSelecionado)" class="button button-assertive  button-block"><i class="icon ion ion-ios-minus-outline "></i></button>
+
+					</div>
+					</div>		
+
+			</div>
+
+
+
+
 		</div>
-		<div ng-repeat="jogador in timeSelecionado.jogadores" class="item item-text-wrap">
-			<h3>Nome: {{jogador.nome}} Nota:{{jogador.nota}}</h3>
-		</div>
+
 	</div>
 </ion-content>
 </ion-view>

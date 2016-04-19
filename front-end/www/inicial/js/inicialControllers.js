@@ -12,7 +12,6 @@
 
     });
 
-
     app.controller('jogadorCtrl', ['jogadorService','$scope',function (jogadorService,$scope){
 
         var ctrl = this;
@@ -24,7 +23,7 @@
         ctrl.constructor();
 
         ctrl.addJogador= function (){
-            ctrl.jogadores.push(new Jogador("","1",null,0));
+            ctrl.jogadores.push(new Jogador("","1",null,0,true));
         }
 
 
@@ -37,6 +36,11 @@
 
         }
 
+         ctrl.desabilitarJogador = function(jogador) {
+
+           jogador.ativo = jogador.ativo === true? false:true;   
+
+        }
 
         $scope.$watch(function() {
             return ctrl.jogadores;
@@ -92,7 +96,7 @@
         ctrl.jogadores;
 
         ctrl.constructor = function(){
-            ctrl.jogadores = jogadorService.getJogadores();
+            ctrl.jogadores = jogadorService.getJogadoresAtivos();
             ctrl.jogadoresPorTime = jogadorService.getJogadoresPorTime();
             ctrl.avulsoMedio = jogadorService.getAvulsoMedio();
             ctrl.times = [];
@@ -109,6 +113,12 @@
             ctrl.criarTimes(ctrl.numeroTimes,ctrl.jogadores);
         }
 
+        ctrl.adicionarVitoria = function(time){
+           time.vitorias ++;
+        }
+        ctrl.adicionarDerrota = function(time){
+           time.vitorias --;
+        }
         ctrl.adicionaAvulsos = function(){
 
             var notaAvulso = ctrl.calcularMediaAvulso();
@@ -121,7 +131,7 @@
 
 
             for (var index = 0; index < totalFaltantes; index++) {
-                ctrl.jogadores.push(new Jogador("NovoJogador " + (index + 1), notaAvulso, 0,0));
+                ctrl.jogadores.push(new Jogador("NovoJogador " + (index + 1), notaAvulso, 0,0,true));
             }
 
 
@@ -189,8 +199,7 @@
 
         for(var index = 0; index < numeroTimes; index++) {
 
-            this.times.push(new Time(index,jogadores.filter(function(x){return x.time===index})));
-
+            this.times.push(new Time(index,jogadores.filter(function(x){return x.time===index}), 0));
         }
 
 
