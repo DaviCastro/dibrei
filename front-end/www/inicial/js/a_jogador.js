@@ -3,12 +3,14 @@
  * [description]
  * @return {[type]} [description]
  */
- function Jogador(nome,nota,time,gols, ativo){
+ function Jogador(nome,nota,time,gols, ativo, totalGols, totalPresencas){
  	this._nome = nome;
  	this._nota = nota;
  	this._time = time;
  	this._gols = gols;
  	this._ativo = ativo;
+ 	this._totalGols = totalGols;
+ 	this._totalPresencas = totalPresencas;
 
 
  };
@@ -37,12 +39,20 @@
  	set: function (value) { this._time = value }
  });
 
-  Object.defineProperty(Jogador.prototype, 'gols', {
+ Object.defineProperty(Jogador.prototype, 'gols', {
  	get: function () { return this._gols; },
  	set: function (value) { this._gols = value }
  });
 
+ Object.defineProperty(Jogador.prototype, 'totalGols', {
+ 	get: function () { return this._totalGols; },
+ 	set: function (value) { this._totalGols = value }
+ });
 
+ Object.defineProperty(Jogador.prototype, 'totalPresencas', {
+ 	get: function () { return this._totalPresencas; },
+ 	set: function (value) { this._totalPresencas = value }
+ });
 
  function Time(numeroTime,jogadores, vitorias){
  	this._jogadores = jogadores;
@@ -52,7 +62,7 @@
 
 
 
-  Object.defineProperty(Time.prototype, 'jogadores', {
+ Object.defineProperty(Time.prototype, 'jogadores', {
  	get: function () { return this._jogadores; },
  	set: function (value) { this._jogadores = value }
  });

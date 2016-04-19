@@ -1,0 +1,45 @@
+<ion-view title="Gols" id="page40">
+<ion-content overflow-scroll="true" padding="true" class="has-header">
+
+
+
+
+<div class="row">
+	
+	
+
+
+	<div  style="margin-top: 17px;"class="col">
+
+		<h3>Jogadores Inscritos  - {{ctrl.jogadores.length}}</h3>
+
+	</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<ion-list>
+
+
+
+<div ng-repeat="jogador in ctrl.jogadores">
+	<ion-item >
+	{{jogador.nome}}   ___ {{jogador.totalGols}}
+
+</ion-item>
+</div>
+
+
+</ion-list>
+
+
+
+</ion-content>
+</ion-view>

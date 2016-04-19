@@ -21,6 +21,7 @@
         'app.inicial',
         'app.pelada',
         'app.dibreiro',
+        'app.ranks',
 
     ]);
 

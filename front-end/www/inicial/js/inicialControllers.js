@@ -23,7 +23,7 @@
         ctrl.constructor();
 
         ctrl.addJogador= function (){
-            ctrl.jogadores.push(new Jogador("","1",null,0,true));
+            ctrl.jogadores.push(new Jogador("","1",null,0,true,0,0));
         }
 
 
@@ -36,21 +36,21 @@
 
         }
 
-         ctrl.desabilitarJogador = function(jogador) {
+        ctrl.desabilitarJogador = function(jogador) {
 
-           jogador.ativo = jogador.ativo === true? false:true;   
+         jogador.ativo = jogador.ativo === true? false:true;   
 
-        }
+     }
 
-        $scope.$watch(function() {
-            return ctrl.jogadores;
-        }, function(current, original) {
-            if(current != original)
+     $scope.$watch(function() {
+        return ctrl.jogadores;
+    }, function(current, original) {
+        if(current != original)
             jogadorService.setJogadores(ctrl.jogadores);
-        },true);
+    },true);
 
 
-    }]);
+ }]);
 
 
     app.controller('configCtrl', ['jogadorService','$scope',function (jogadorService,$scope){
@@ -71,7 +71,7 @@
             return ctrl.jogadoresPorTime;
         }, function(current, original) {
             if(current!=original)
-            jogadorService.setJogadoresPorTime(ctrl.jogadoresPorTime);
+                jogadorService.setJogadoresPorTime(ctrl.jogadoresPorTime);
         });
 
 
@@ -79,7 +79,7 @@
             return ctrl.avulsoMedio;
         }, function(current, original) {
             if(current!=original)
-            jogadorService.setAvulsoMedio(ctrl.avulsoMedio);
+                jogadorService.setAvulsoMedio(ctrl.avulsoMedio);
         });
 
 
@@ -114,76 +114,74 @@
         }
 
         ctrl.adicionarVitoria = function(time){
-           time.vitorias ++;
-        }
-        ctrl.adicionarDerrota = function(time){
-           time.vitorias --;
-        }
-        ctrl.adicionaAvulsos = function(){
-
-            var notaAvulso = ctrl.calcularMediaAvulso();
-            var totalFaltantes = 0;
-
-
-            if (ctrl.jogadores.length % ctrl.jogadoresPorTime != 0) {
-                totalFaltantes = ctrl.jogadoresPorTime - (ctrl.jogadores.length % ctrl.jogadoresPorTime);
-            }
-
-
-            for (var index = 0; index < totalFaltantes; index++) {
-                ctrl.jogadores.push(new Jogador("NovoJogador " + (index + 1), notaAvulso, 0,0,true));
-            }
-
-
-
-        }
-
-        ctrl.calcularMediaAvulso = function(){
-            var mediaNota = 0
-
-            if(ctrl.avulsoMedio){
-                var totalNota = ctrl.jogadores.reduce(function(previousValue, currentValue, index, array){
-                    return parseInt(previousValue) + parseInt(currentValue.nota);
-                },0);
-
-                mediaNota = Math.floor(totalNota / this.jogadores.length);
-            }
-
-            return mediaNota;
-        }
-
-
-        ctrl.ordenaJogadores = function(){
-
-         ctrl.jogadores.sort(function(a,b){
-            if (a.nota === b.nota) {
-                return Boolean(Math.round(Math.random())) ? 1 : -1;
-            }
-            return a.nota > b.nota ? -1 : 1;
-        });
-
+         time.vitorias ++;
      }
+     ctrl.adicionarDerrota = function(time){
+         time.vitorias --;
+     }
+     ctrl.adicionaAvulsos = function(){
 
-     ctrl.sortearTimes = function(numeroTimes){
+        var notaAvulso = ctrl.calcularMediaAvulso();
+        var totalFaltantes = 0;
 
-        this.jogadores.forEach(function(jogador){
-            jogador.time = null;
-        });
 
-        for (var i = 0; i < ctrl.jogadoresPorTime; i++) {
+        if (ctrl.jogadores.length % ctrl.jogadoresPorTime != 0) {
+            totalFaltantes = ctrl.jogadoresPorTime - (ctrl.jogadores.length % ctrl.jogadoresPorTime);
+        }
 
-            for (var j = 0; j < numeroTimes; j++) {
-                var min = i * numeroTimes;
-                var max = min + numeroTimes - 1;
 
-                while (ctrl.faltamJogadoresNoPote(min, max)) {
-                    var aleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
+        for (var index = 0; index < totalFaltantes; index++) {
+            ctrl.jogadores.push(new Jogador("NovoJogador " + (index + 1), notaAvulso, 0,0,true));
+        }
 
-                    if (ctrl.jogadores[aleatorio].time === null) {
-                        ctrl.atribuirTime(j, ctrl.jogadores[aleatorio]);
-                        break;
-                    }
 
+
+    }
+
+    ctrl.calcularMediaAvulso = function(){
+        var mediaNota = 0
+
+        if(ctrl.avulsoMedio){
+            var totalNota = ctrl.jogadores.reduce(function(previousValue, currentValue, index, array){
+                return parseInt(previousValue) + parseInt(currentValue.nota);
+            },0);
+
+            mediaNota = Math.floor(totalNota / this.jogadores.length);
+        }
+
+        return mediaNota;
+    }
+
+
+    ctrl.ordenaJogadores = function(){
+
+       ctrl.jogadores.sort(function(a,b){
+        if (a.nota === b.nota) {
+            return Boolean(Math.round(Math.random())) ? 1 : -1;
+        }
+        return a.nota > b.nota ? -1 : 1;
+    });
+
+   }
+
+   ctrl.sortearTimes = function(numeroTimes){
+
+    this.jogadores.forEach(function(jogador){
+        jogador.time = null;
+    });
+
+    for (var i = 0; i < ctrl.jogadoresPorTime; i++) {
+
+        for (var j = 0; j < numeroTimes; j++) {
+            var min = i * numeroTimes;
+            var max = min + numeroTimes - 1;
+
+            while (ctrl.faltamJogadoresNoPote(min, max)) {
+                var aleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
+
+                if (ctrl.jogadores[aleatorio].time === null) {
+                    ctrl.atribuirTime(j, ctrl.jogadores[aleatorio]);
+                    break;
                 }
 
             }
@@ -192,40 +190,42 @@
 
     }
 
-
-    ctrl.criarTimes= function(numeroTimes,jogadores){
-
-        this.times = [];
-
-        for(var index = 0; index < numeroTimes; index++) {
-
-            this.times.push(new Time(index,jogadores.filter(function(x){return x.time===index}), 0));
-        }
+}
 
 
+ctrl.criarTimes= function(numeroTimes,jogadores){
+
+    this.times = [];
+
+    for(var index = 0; index < numeroTimes; index++) {
+
+        this.times.push(new Time(index,jogadores.filter(function(x){return x.time===index}), 0));
     }
 
 
-    ctrl.faltamJogadoresNoPote = function(min, max){
+}
 
-     for (var u = min; u <= max; u++) {
 
-        if (this.jogadores[u].time === null) {
-            return true;
-        }
+ctrl.faltamJogadoresNoPote = function(min, max){
+
+   for (var u = min; u <= max; u++) {
+
+    if (this.jogadores[u].time === null) {
+        return true;
     }
-    return false;
+}
+return false;
 
 }
 
 
 ctrl.atribuirTime = function(time,jogador){
- jogador.time = time;
+   jogador.time = time;
 }
 
 
 ctrl.getNotaTotal = function(time){
-   return time.jogadores.reduce(function(memo, jogador){
+ return time.jogadores.reduce(function(memo, jogador){
     return memo + parseInt(jogador.nota);
 }, 0);
 };
@@ -241,7 +241,7 @@ ctrl.getNotaTotal = function(time){
         var ctrl = this;
         ctrl.jogadores=[];
         ctrl.constructor = function(){
-            ctrl.jogadores = jogadorService.getJogadores();
+            ctrl.jogadores = jogadorService.getJogadoresAtivos();
         }
 
         ctrl.constructor();
@@ -258,7 +258,23 @@ ctrl.getNotaTotal = function(time){
             jogadorService.setJogadores(ctrl.jogadores)
         }
 
+        ctrl.finalizarDia= function(){
+            var jogadoresBanco = jogadorService.getJogadores();
 
+            jogadoresBanco.forEach(function(jogadorBanco) {
+                var jogadorTela = ctrl.jogadores.filter(function(jogador) {
+                    return jogador.nome === jogadorBanco.nome;
+                });
+
+                jogadorBanco.totalGols += jogadorTela.totalGols;
+                jogadorTela.gols = 0;
+                jogadorBanco.gols = 0;
+                jogadorBanco.totalPresencas++;
+
+            })
+
+
+        };
 
         ctrl.timerRunning = true;
         ctrl.startTimer = function (){

@@ -63,7 +63,8 @@ gulp.task('concat', function() {
     'www/login/**/*.js',
     'www/login/**/*.js',
     'www/menu/**/*.js',
-    'www/pelada/**/*.js'])
+    'www/pelada/**/*.js',
+    'www/ranks/**/*.js'])
   .pipe(concat('app.js'))
   .pipe(gulp.dest('www/dist/'));
 });
