@@ -236,7 +236,7 @@ ctrl.getNotaTotal = function(time){
 }]);
 
 
-    app.controller('peladaECtrl', ['jogadorService','$scope',function (jogadorService,$scope){
+    app.controller('peladaECtrl', ['jogadorService','$scope','$ionicPopup',function (jogadorService,$scope,$ionicPopup){
 
         var ctrl = this;
         ctrl.jogadores=[];
@@ -266,12 +266,14 @@ ctrl.getNotaTotal = function(time){
                     return jogador.nome === jogadorBanco.nome;
                 });
 
-                jogadorBanco.totalGols += jogadorTela.totalGols;
-                jogadorTela.gols = 0;
+                jogadorBanco.totalGols += jogadorTela[0].gols;
+                jogadorTela[0].gols = 0;
                 jogadorBanco.gols = 0;
                 jogadorBanco.totalPresencas++;
 
-            })
+            });
+
+            jogadorService.setJogadores(jogadoresBanco);
 
 
         };
@@ -297,12 +299,24 @@ ctrl.getNotaTotal = function(time){
 
         ctrl.resetTimer = function(){
           $scope.$broadcast('timer-reset');
-      }
+      };
+
+      ctrl.showConfirm = function() {
+        var confirmPopup = $ionicPopup.confirm({
+            title: 'FINALIZAR DIA',
+            template: 'TEM CERTEZA?'
+        });
+        confirmPopup.then(function(res) {
+            if(res) {
+                ctrl.finalizarDia();
+            }
+        });
+    };
 
 
 
 
-  }]);
+}]);
 
 
 

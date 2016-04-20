@@ -9,6 +9,8 @@
 
         var ctrl = this;
 
+        $state.go('menu.ranks.gols');
+
         ctrl.trocaStatus = function(state){
             $state.go(state, {reload:true});
         }
@@ -17,7 +19,7 @@
     app.controller('golsCtrl', ['jogadorService','$scope',function (jogadorService,$scope){
 
         var ctrl = this;
-        ctrl.jogadores=[];
+        ctrl.jogadores={};
         ctrl.constructor = function(){
             ctrl.jogadores = jogadorService.getJogadores();
         }

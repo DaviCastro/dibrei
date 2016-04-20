@@ -3,41 +3,28 @@
 
 
 
-
-<div class="row">
+<div style="border-radius: 30px;" class="card">
 	
-	
-
-
-	<div  style="margin-top: 17px;"class="col">
-
-		<h3>Jogadores Inscritos  - {{ctrl.jogadores.length}}</h3>
+	<div class="row row-center">
+		<div class="col ">
+			
+			<h3 >Total Jogadores : {{ctrl.jogadores.length}}</h3>
+		</div>	
 
 	</div>
 
+	
+	<div ng-repeat="jogador in ctrl.jogadores" class="list">
+		<div class="row">
+			<a class="item-avatar" href="#">
+				<img src="img/avatar.jpg">
+			</a>
+			<div class="col"><h3> {{jogador.nome}} Total Gols : {{jogador.totalGols}}</h3></div>
+		</div>
+	</div>
 </div>
 
-
-
-
-
-
-
-
-
-<ion-list>
-
-
-
-<div ng-repeat="jogador in ctrl.jogadores">
-	<ion-item >
-	{{jogador.nome}}   ___ {{jogador.totalGols}}
-
-</ion-item>
 </div>
-
-
-</ion-list>
 
 
 
