@@ -1,0 +1,4 @@
+# dibrei
+JAVASCRIPT
+IONIC
+ANGULAR
